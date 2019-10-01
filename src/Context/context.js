@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import './context.css';
 
 const MyContext = React.createContext();
@@ -49,21 +49,16 @@ const Component3 = () => (
     </div>
 );
 
-class Component4 extends Component {
+const Component4 = () => {
+    const { count, dec, inc } = useContext(MyContext);
 
-    static contextType = MyContext;
-
-    render() {
-        const { count, dec, inc } = this.context;
-
-        return (
-            <div className="component4">
-                <button className="component4_btn" onClick={dec}>-</button>
-                <div className="component4_count">{count}</div>
-                <button className="component4_btn" onClick={inc}>+</button>
-            </div>
-        )
-    }
+    return (
+        <div className="component4">
+            <button className="component4_btn" onClick={dec}>-</button>
+            <div className="component4_count">{count}</div>
+            <button className="component4_btn" onClick={inc}>+</button>
+        </div>
+    )
 }
 
 
