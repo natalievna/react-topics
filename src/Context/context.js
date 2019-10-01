@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './context.css';
 
+const MyContext = React.createContext();
+
 export default class Component1 extends Component {
 
     state = {
@@ -17,39 +19,49 @@ export default class Component1 extends Component {
 
 
     render() {
-        const { count, dec, inc } = this.state;
+
+        const value = {
+            count: this.state.count,
+            dec: this.dec,
+            inc: this.inc
+        }
 
         return (
-            <div className="component1">
-                <Component2 count={count} dec={dec} inc={inc} />
-            </div>
+            <MyContext.Provider value={value}>
+                <div className="component1">
+                    <Component2 />
+                </div>
+            </MyContext.Provider>
+
         )
     }
 }
 
-const Component2 = ({ count, dec, inc }) => {
-    return (
-        <div className="component2">
-            <Component3 count={count} dec={dec} inc={inc} />
-        </div>
-    );
-};
+const Component2 = () => (
+    <div className="component2">
+        <Component3 />
+    </div>
+)
 
-const Component3 = ({ count, dec, inc }) => {
-    return (
-        <div className="component3">
-            <Component4 count={count} dec={dec} inc={inc} />
-        </div>
-    );
-};
+const Component3 = () => (
+    <div className="component3">
+        <Component4 />
+    </div>
+);
 
-const Component4 = ({ count, dec, inc }) => {
-    return (
-        <div className="component4">
-            <button className="component4_btn" onClick={dec}>-</button>
-            <div className="component4_count">{count}</div>
-            <button className="component4_btn" ocClick={inc}>+</button>
-        </div>
-    );
-};
+const Component4 = () => (
+    <MyContext.Consumer>
+        {({ count, dec, inc }) => (
+            <div className="component4">
+                <button className="component4_btn" onClick={dec}>-</button>
+                <div className="component4_count">{count}</div>
+                <button className="component4_btn" onClick={inc}>+</button>
+            </div>
+        )}
+    </MyContext.Consumer>
+);
+
+
+
+
 
