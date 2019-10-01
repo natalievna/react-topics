@@ -49,17 +49,22 @@ const Component3 = () => (
     </div>
 );
 
-const Component4 = () => (
-    <MyContext.Consumer>
-        {({ count, dec, inc }) => (
+class Component4 extends Component {
+
+    static contextType = MyContext;
+
+    render() {
+        const { count, dec, inc } = this.context;
+
+        return (
             <div className="component4">
                 <button className="component4_btn" onClick={dec}>-</button>
                 <div className="component4_count">{count}</div>
                 <button className="component4_btn" onClick={inc}>+</button>
             </div>
-        )}
-    </MyContext.Consumer>
-);
+        )
+    }
+}
 
 
 
