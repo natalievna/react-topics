@@ -1,21 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Component1 from './Context/context';
-
-class App extends Component {
-    render() {
-        return (
-            <div>
-               <Component1/>
-            </div>
-        )
-    }
-}
-
-export default App;
+import App from './Routing/App';
 
 
 ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-);
+    <App />,
+    document.getElementById('root'));
