@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    background: url(./images/477642-PGDMKI-117.jpg) no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+.app {
+    margin: 0 auto;
+}
+
+.search-form{
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar{
+    width: 50%;
+    border: 3px solid #BDB76B;
+    border-right: none;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #696969;
+    font-size: 25px;
+}
+
+.search-bar:hover{
+    background: #EEE8AA;
+}
+
+.search-button{
+    height: 46px;
+    border: 1px solid #BDB76B;
+    background: #BDB76B;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.recipes{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+

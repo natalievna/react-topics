@@ -1,0 +1,39 @@
+.recipe{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    padding: 20px; 
+    background-color: #BDB76B;
+    opacity: 0.9;
+}
+
+.image{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    box-shadow: 5px 10px 30px rgb(84, 74, 12);
+} 
+
+h1{
+    color: rgb(133, 131, 21);
+   text-shadow: 2px 2px 2px white;
+   font-size: 40px;
+}
+
+.ingredients{
+    list-style-image: url('./images/correct.png');
+}
+
+.ingredients-list{
+    font-size: 24px;
+}
+
+.calories{
+    font-size: 24px;
+    font-weight: bold;
+}
